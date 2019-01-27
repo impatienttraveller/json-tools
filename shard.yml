@@ -1,0 +1,9 @@
+name: json-patch
+version: 0.1.0
+
+authors:
+  - Daniel del Castillo <dadelcas@hotmail.com>
+
+crystal: 0.26.1
+
+license: MIT
