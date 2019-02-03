@@ -1,2 +1,5 @@
 require "spec"
-require "../src/json-patch"
+require "../src/json-tools"
+require "../src/json-tools/exception"
+require "../src/json-tools/patch"
+require "../src/json-tools/pointer"
