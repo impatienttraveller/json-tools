@@ -10,7 +10,7 @@ Add this to your application's `shard.yml`:
 
 ```yaml
 dependencies:
-  json-patch:
+  json-tools:
     github: impatienttraveller/json-tools
 ```
 
