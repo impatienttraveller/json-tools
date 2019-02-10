@@ -1,5 +1,7 @@
 # json-tools
 
+[![Build Status](https://travis-ci.org/impatienttraveller/json-tools.svg?branch=master)](https://travis-ci.org/impatienttraveller/json-tools)
+
 An implementation of [RFC-6901](https://tools.ietf.org/html/rfc6901) and [RFC-6902](https://datatracker.ietf.org/doc/rfc6902)
 
 ## Installation
