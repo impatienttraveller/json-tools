@@ -1,4 +1,5 @@
 module Json::Tools
+  # Exception raised by `Json::Tools::Pointer` if the pointer cannot be constructed of evaluated.
   class PointerException < Exception
     getter object, index
 
@@ -7,6 +8,7 @@ module Json::Tools
     end
   end
 
+  # Exception raised by `Json::Tools::Patch` if the patch document is invalid.
   class IvalidFormat < Exception
     def initialize(object : JSON::Any)
       initialize "JSON object is not an array: #{object}"
@@ -17,6 +19,7 @@ module Json::Tools
     end
   end
 
+  # Exception raised by `Json::Tools::Patch` if a path specified in the operation refers to an array index and is not within the array bounds.
   class OutOfBoundsException < Exception
     getter object, index
 
@@ -25,6 +28,7 @@ module Json::Tools
     end
   end
 
+  # Exception raised by `Json::Tools::Patch` when trying to remove a property that does not exist in the target JSON object.
   class MissingPropertyException < Exception
     getter object, property_name
 
@@ -33,12 +37,15 @@ module Json::Tools
     end
   end
 
+  # Exception raised if trying to perform an operation that does not make sense in the current context, for example
+  # when trying to access the parent pointer of the root element.
   class IllegalOperationException < Exception
     def initialize(message : String)
       super message
     end
   end
 
+  # Exception raised by `Json::Tools::Patch` when a test operation does not pass.
   class FailedTestException < Exception
     getter value, path
 
