@@ -1,1 +1,13 @@
 language: crystal
+script:
+  - crystal tool format --check
+  - crystal spec
+  - crystal docs
+deploy:
+  provider: pages
+  skip_cleanup: true
+  project_name: impatienttraveller/json-tools
+  github_token: $GITHUB_TOKEN
+  local_dir: docs
+  on:
+    branch: master
