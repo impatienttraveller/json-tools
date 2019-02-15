@@ -840,4 +840,66 @@ describe Json::Tools::Patch do
       ))
     end
   end
+
+  it "Multiple operations" do
+    patch_object = JSON.parse(<<-JSON
+      [
+        { "op": "copy", "from": "/c/c~11", "path": "/b/1" },
+        { "op": "test", "path": "/b/0", "value": "1st" },
+        { "op": "test", "path": "/b/1", "value": "abc" },
+        { "op": "test", "path": "/b/2", "value": 7 },
+        { "op": "test", "path": "/b/3", "value": 3.14 },
+        { "op": "add", "path": "/e", "value": ["new"] },
+        { "op": "remove", "path": "/a" },
+        { "op": "replace", "path": "/d/1/d~00", "value": "porp" },
+        { "op": "move", "from": "/d/1/d|1", "path": "/e/1" }
+      ]
+      JSON
+    )
+    patch = Json::Tools::Patch.new(patch_object)
+
+    doc = JSON.parse(<<-JSON
+      {
+        "a": 1,
+        "b": ["1st", 7, 3.14],
+        "c": {
+          "c/1": "abc",
+          "c%2": [890, "xyz"],
+          "c^3": 1.2
+        },
+        "d": [
+          6,
+          {
+            "d~0": "prop",
+            "d|1": "erty"
+          },
+          4
+        ]
+      }
+      JSON
+    )
+    original_doc = doc.clone
+    patched_doc = patch.apply(doc)
+
+    doc.should eq(original_doc)
+    patched_doc.should eq(JSON.parse(<<-JSON
+      {
+        "b": ["1st", "abc", 7, 3.14],
+        "c": {
+          "c/1": "abc",
+          "c%2": [890, "xyz"],
+          "c^3": 1.2
+        },
+        "d": [
+          6,
+          {
+            "d~0": "porp"
+          },
+          4
+        ],
+        "e": ["new", "erty"]
+      }
+      JSON
+    ))
+  end
 end
