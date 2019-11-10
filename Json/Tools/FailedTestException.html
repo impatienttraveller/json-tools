@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.30.1">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
+  <meta id="repository-name" content="github.com/impatienttraveller/json-tools">
+  <title>Json::Tools::FailedTestException - github.com/impatienttraveller/json-tools</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/impatienttraveller/json-tools/Json" data-name="json">
+      <a href="../../Json.html">Json</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="github.com/impatienttraveller/json-tools/Json/Tools" data-name="json::tools">
+      <a href="../../Json/Tools.html">Tools</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/impatienttraveller/json-tools/Json/Tools/FailedTestException" data-name="json::tools::failedtestexception">
+      <a href="../../Json/Tools/FailedTestException.html">FailedTestException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/IllegalOperationException" data-name="json::tools::illegaloperationexception">
+      <a href="../../Json/Tools/IllegalOperationException.html">IllegalOperationException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/IvalidFormat" data-name="json::tools::ivalidformat">
+      <a href="../../Json/Tools/IvalidFormat.html">IvalidFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/MissingPropertyException" data-name="json::tools::missingpropertyexception">
+      <a href="../../Json/Tools/MissingPropertyException.html">MissingPropertyException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/OutOfBoundsException" data-name="json::tools::outofboundsexception">
+      <a href="../../Json/Tools/OutOfBoundsException.html">OutOfBoundsException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/Patch" data-name="json::tools::patch">
+      <a href="../../Json/Tools/Patch.html">Patch</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/Pointer" data-name="json::tools::pointer">
+      <a href="../../Json/Tools/Pointer.html">Pointer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/PointerException" data-name="json::tools::pointerexception">
+      <a href="../../Json/Tools/PointerException.html">PointerException</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Json::Tools::FailedTestException
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Json/Tools/FailedTestException.html">Json::Tools::FailedTestException</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>Exception raised by <code><a href="../../Json/Tools/Patch.html">Json::Tools::Patch</a></code> when a test operation does not pass.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/impatienttraveller/json-tools/blob/fcd058717bff4e52e0f099763ff2397a9008612b/src/json-tools/exception.cr#L49" target="_blank">
+        json-tools/exception.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(value:JSON::Any,path:String)-class-method" class="signature"><strong>.new</strong>(value : JSON::Any, path : String)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#path:String-instance-method" class="signature"><strong>#path</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#value:JSON::Any-instance-method" class="signature"><strong>#value</strong> : JSON::Any</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(value:JSON::Any,path:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(value : JSON::Any, path : String)
+
+        <a class="method-permalink" href="#new(value:JSON::Any,path:String)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/impatienttraveller/json-tools/blob/fcd058717bff4e52e0f099763ff2397a9008612b/src/json-tools/exception.cr#L52" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="path:String-instance-method">
+      <div class="signature">
+        
+        def <strong>path</strong> : String
+
+        <a class="method-permalink" href="#path:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/impatienttraveller/json-tools/blob/fcd058717bff4e52e0f099763ff2397a9008612b/src/json-tools/exception.cr#L50" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="value:JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>value</strong> : JSON::Any
+
+        <a class="method-permalink" href="#value:JSON::Any-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/impatienttraveller/json-tools/blob/fcd058717bff4e52e0f099763ff2397a9008612b/src/json-tools/exception.cr#L50" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.30.1">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
+  <meta id="repository-name" content="github.com/impatienttraveller/json-tools">
+  <title>README - github.com/impatienttraveller/json-tools</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="github.com/impatienttraveller/json-tools/Json" data-name="json">
+      <a href="Json.html">Json</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/impatienttraveller/json-tools/Json/Tools" data-name="json::tools">
+      <a href="Json/Tools.html">Tools</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/FailedTestException" data-name="json::tools::failedtestexception">
+      <a href="Json/Tools/FailedTestException.html">FailedTestException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/IllegalOperationException" data-name="json::tools::illegaloperationexception">
+      <a href="Json/Tools/IllegalOperationException.html">IllegalOperationException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/IvalidFormat" data-name="json::tools::ivalidformat">
+      <a href="Json/Tools/IvalidFormat.html">IvalidFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/MissingPropertyException" data-name="json::tools::missingpropertyexception">
+      <a href="Json/Tools/MissingPropertyException.html">MissingPropertyException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/OutOfBoundsException" data-name="json::tools::outofboundsexception">
+      <a href="Json/Tools/OutOfBoundsException.html">OutOfBoundsException</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/Patch" data-name="json::tools::patch">
+      <a href="Json/Tools/Patch.html">Patch</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/Pointer" data-name="json::tools::pointer">
+      <a href="Json/Tools/Pointer.html">Pointer</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/impatienttraveller/json-tools/Json/Tools/PointerException" data-name="json::tools::pointerexception">
+      <a href="Json/Tools/PointerException.html">PointerException</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1>json-tools</h1>
+
+<p><a href="https://crystal-lang.org/" target="_blank"><img src="https://img.shields.io/badge/built%20with-crystal-000000.svg?style=flat-square" alt="Built with Crystal"/></a>
+<a href="https://travis-ci.org/impatienttraveller/json-tools" target="_blank"><img src="https://travis-ci.org/impatienttraveller/json-tools.svg?branch=master" alt="Build Status"/></a>
+<a href="https://github.com/impatienttraveller/json-tools/releases" target="_blank"><img src="https://img.shields.io/github/release/impatienttraveller/json-tools.svg?style=flat-square" alt="Releases"/></a></p>
+
+<p>An implementation of <a href="https://tools.ietf.org/html/rfc6901" target="_blank">RFC-6901</a> and <a href="https://datatracker.ietf.org/doc/rfc6902" target="_blank">RFC-6902</a></p>
+
+<h2>Installation</h2>
+
+<p>Add this to your application's <code>shard.yml</code>:</p>
+
+<pre><code class="language-yaml">dependencies:
+  json-tools:
+    github: impatienttraveller/json-tools</code></pre>
+
+<h2>Usage</h2>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;json-tools&quot;</span></code></pre>
+
+<p>Once you have a <code>JSON::Any</code> object in memory you can address any value using the <code>Pointer</code> class:</p>
+
+<pre><code class="language-crystal">json : <span class="t">JSON</span><span class="t">::</span><span class="t">Any</span> <span class="o">=</span> ...
+val <span class="o">=</span> <span class="t">Json</span><span class="t">::</span><span class="t">Tools</span><span class="t">::</span><span class="t">Pointer</span>.<span class="k">new</span>(<span class="s">&quot;/foo/0/bar&quot;</span>).eval(json)</code></pre>
+
+<p>JSON object can be patched by using the <code>Patch</code> class:</p>
+
+<pre><code class="language-crystal">patch : <span class="t">JSON</span><span class="t">::</span><span class="t">Any</span> <span class="o">=</span> ...
+json : <span class="t">JSON</span><span class="t">::</span><span class="t">Any</span> <span class="o">=</span> ...
+patched_json <span class="o">=</span> <span class="t">Json</span><span class="t">::</span><span class="t">Tools</span><span class="t">::</span><span class="t">Patch</span>.<span class="k">new</span>(patch).apply(json)</code></pre>
+
+<p>This creates a copy of the passed JSON object to work with and the original object is not altered.</p>
+
+<h2>Development</h2>
+
+<p>Please raise a GitHub issue and document the commit with the following format:</p>
+
+<pre><code>[issue<span class="o">-</span>x] <span class="t">Description</span></code></pre>
+
+<h2>Contributing</h2>
+
+<ol><li>Fork it (&lt;https://github.com/impatienttraveller/json-tools/fork>)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
+
+<h2>Contributors</h2>
+
+<ul><li><a href="https://github.com/ddcprg" target="_blank">ddcprg</a> Daniel del Castillo - creator, maintainer</li></ul>
+</div>
+</body>
+</html>
