@@ -20,8 +20,8 @@ module Json::Tools
   # This class represent a JSON patch object that can be applied to another JSON object, simply pass the patch object upon construction and then apply on the target document:
   #
   # ```
-  # json_patch = JSON.parse ...
-  # json_obj = JSON.parse ...
+  # json_patch = JSON.parse(some_json_patch_string)
+  # json_obj = JSON.parse(some_json_object_string
   # patch = Json::Tools::Patch.new(json_patch)
   # patched_obj = patch.apply(json_obj)
   # ```

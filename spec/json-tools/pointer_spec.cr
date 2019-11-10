@@ -86,7 +86,7 @@ describe Json::Tools::Pointer do
       element.should eq("ccc")
     end
 
-    expect_raises(Json::Tools::PointerException, "Unable to access element a of [1_i64, 2_i64]") do
+    expect_raises(Json::Tools::PointerException, "Unable to access element a of [1, 2]") do
       p = Json::Tools::Pointer.new("/a")
       doc = JSON.parse("[1, 2]")
       p.eval(doc)
@@ -103,7 +103,7 @@ describe Json::Tools::Pointer do
       p.eval(doc)
     end
 
-    expect_raises(Json::Tools::PointerException, "Unable to access element 3 of [1_i64, 2_i64]") do
+    expect_raises(Json::Tools::PointerException, "Unable to access element 3 of [1, 2]") do
       p = Json::Tools::Pointer.new("/a/3")
       doc = JSON.parse(<<-JSON
         {
