@@ -118,7 +118,7 @@ describe Json::Tools::Patch do
       patched_doc.should eq(doc)
     end
 
-    expect_raises(Json::Tools::PointerException, "Unable to access element a of {\"x\" => 1_i64, \"y\" => \"cool\"}") do
+    expect_raises(Json::Tools::PointerException, "Unable to access element a of {\"x\" => 1, \"y\" => \"cool\"}") do
       patch_object = JSON.parse(<<-JSON
         [
           { "op": "test", "path": "/a", "value": 1 }
@@ -274,7 +274,7 @@ describe Json::Tools::Patch do
       patch.apply(doc)
     end
 
-    expect_raises(Json::Tools::OutOfBoundsException, "Index 10 of [1_i64, 2_i64] is out of bounds") do
+    expect_raises(Json::Tools::OutOfBoundsException, "Index 10 of [1, 2] is out of bounds") do
       patch_object = JSON.parse(<<-JSON
         [
           { "op": "remove", "path": "/a/10" }
@@ -293,7 +293,7 @@ describe Json::Tools::Patch do
       patch.apply(doc)
     end
 
-    expect_raises(Json::Tools::MissingPropertyException, "Property c of {\"a\" => 1_i64, \"b\" => \"cool\"} is unknown") do
+    expect_raises(Json::Tools::MissingPropertyException, "Property c of {\"a\" => 1, \"b\" => \"cool\"} is unknown") do
       patch_object = JSON.parse(<<-JSON
         [
           { "op": "remove", "path": "/c" }
@@ -589,7 +589,7 @@ describe Json::Tools::Patch do
       patch.apply(doc)
     end
 
-    expect_raises(Json::Tools::PointerException, "Unable to access element c of {\"b\" => 1_i64}") do
+    expect_raises(Json::Tools::PointerException, "Unable to access element c of {\"b\" => 1}") do
       patch_object = JSON.parse(<<-JSON
         [
           { "op": "replace", "path": "/c", "value": 10 }
@@ -736,7 +736,7 @@ describe Json::Tools::Patch do
       ))
     end
 
-    expect_raises(Json::Tools::PointerException, "Unable to access element c of {\"a\" => [1_i64, 3_i64, 5_i64]}") do
+    expect_raises(Json::Tools::PointerException, "Unable to access element c of {\"a\" => [1, 3, 5]}") do
       patch_object = JSON.parse(<<-JSON
         [
           { "op": "copy", "from": "/c", "path": "/a/0" }

@@ -13,7 +13,7 @@ module Json::Tools
   # This class represent a JSON pointer that can be evaluated on a JSON object:
   #
   # ```
-  # json_obj = JSON.parse ...
+  # json_obj = JSON.parse(some_json_object_string)
   # pointer = Json::Tools::Pointer.new("/foo/0/bar")
   # value = pointer.eval(json_obj)
   # ```
